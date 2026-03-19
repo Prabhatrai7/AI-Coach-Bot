@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Answer</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Typography plugin (for prose styles) -->
+    <script>
+        tailwind.config = {
+            plugins: [tailwindcss.typography],
+        }
+    </script>
+
+    <!-- Framer Motion -->
+    <script src="https://unpkg.com/framer-motion@10.12.16/dist/framer-motion.js"></script>
+</head>
+
+<body class="h-screen w-screen bg-[#f8fafc] overflow-hidden">
+
+<!-- FULL SCREEN WRAPPER -->
+<div class="h-full w-full flex items-center justify-center px-6">
+
+    <!-- CARD -->
+    <div id="container"
+         class="relative h-[90vh] max-w-6xl w-full
+                bg-white rounded-3xl shadow-2xl
+                border border-slate-200
+                flex flex-col p-8 lg:p-10">
+
+        <!-- Glow -->
+        <div class="absolute -inset-6 bg-emerald-400/15 blur-3xl rounded-3xl -z-10"></div>
+
+        <!-- HEADER -->
+        <div class="mb-4 text-center">
+            <h1 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
+                AI Question Answer
+            </h1>
+            <p class="mt-2 text-slate-600">
+                Context-aware response generated from your resume
+            </p>
+        </div>
+
+        <!-- QUESTION -->
+        <div class="mb-4 bg-slate-50 rounded-xl p-4 border border-slate-200">
+            <p class="text-sm font-semibold text-emerald-700 mb-1">Your Question</p>
+            <p class="text-slate-800 leading-relaxed">
+                {{ query }}
+            </p>
+        </div>
+
+        <!-- ANSWER (SCROLLABLE AREA ONLY) -->
+        <div class="flex-1 overflow-y-auto rounded-xl bg-white border border-slate-200 p-6">
+            <article class="prose prose-slate max-w-none text-slate-800">
+                {{ result }}
+            </article>
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="mt-4 flex flex-col sm:flex-row justify-between gap-4">
+
+            <a href="/ask"
+               class="px-6 py-3 rounded-xl
+                      bg-gradient-to-r from-emerald-600 to-teal-600
+                      text-white font-semibold
+                      shadow-lg hover:scale-105 transition-transform">
+                💬 Ask Another Question
+            </a>
+
+            <a href="/"
+               class="px-6 py-3 rounded-xl
+                      bg-slate-700 text-white font-semibold
+                      shadow-md hover:bg-slate-800 transition">
+                🏠 Back to Home
+            </a>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- Animations -->
+<script>
+    const { motion } = window.Motion;
+
+    motion(document.getElementById("container"), {
+        initial: { opacity: 0, y: 40 },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: 0.6, ease: "easeOut" }
+    });
+</script>
+
+</body>
+</html>

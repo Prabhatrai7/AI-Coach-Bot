@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Evaluation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-slate-100">
+
+<main class="max-w-7xl mx-auto min-h-screen flex items-center px-6">
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 w-full items-center">
+
+        <!-- LEFT CONTENT -->
+        <div class="space-y-8">
+
+            <!-- Headline -->
+            <h1 class="text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
+                Smarter
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
+                    Resume Evaluation
+                </span>
+                for Career Growth
+            </h1>
+
+            <!-- Subtext -->
+            <p class="text-lg text-slate-600 max-w-xl">
+                Upload your resume and let our AI uncover your strengths, skills, and career potential.
+                Get clear insights designed to help you stand out in today’s competitive job market.
+            </p>
+
+            <!-- Features -->
+            <ul class="space-y-3 text-slate-700">
+                <li class="flex items-center gap-2">
+                    <span class="text-emerald-600 font-bold">✔</span>
+                    Skills & experience analysis
+                </li>
+                <li class="flex items-center gap-2">
+                    <span class="text-emerald-600 font-bold">✔</span>
+                    ATS optimization insights
+                </li>
+                <li class="flex items-center gap-2">
+                    <span class="text-emerald-600 font-bold">✔</span>
+                    Personalized career guidance
+                </li>
+            </ul>
+
+            <!-- Upload Form -->
+            <form action="/upload" method="POST" enctype="multipart/form-data" class="space-y-5">
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">
+                        Upload your resume (PDF format)
+                    </label>
+                    <input
+                        type="file"
+                        name="file"
+                        accept=".pdf"
+                        required
+                        class="block w-full max-w-lg rounded-lg border border-slate-300
+                               text-sm text-slate-600
+                               file:mr-4 file:py-2 file:px-4
+                               file:rounded-lg file:border-0
+                               file:bg-emerald-50 file:text-emerald-700 file:font-semibold
+                               hover:file:bg-emerald-100"
+                    >
+                </div>
+
+                <button
+                    type="submit"
+                    class="inline-flex items-center justify-center
+                           px-8 py-3 rounded-lg
+                           bg-gradient-to-r from-emerald-600 to-teal-600
+                           text-white font-semibold
+                           shadow-lg hover:scale-105 transition-transform"
+                >
+                    ✨ Evaluate My Resume
+                </button>
+            </form>
+
+            <!-- Trust note -->
+            <p class="text-sm text-slate-500">
+                🔒 Your resume is encrypted and processed securely.
+            </p>
+        </div>
+
+        <!-- RIGHT VISUAL -->
+        <div class="hidden lg:flex justify-center relative">
+
+            <div class="relative">
+                <img
+                    src="https://res.cloudinary.com/dtsuvx8dz/image/upload/v1714291460/nfbn9ltv8fugtboqcxw0.gif"
+                    alt="AI Career Coaching"
+                    class="rounded-2xl shadow-2xl w-[28rem]"
+                >
+
+                <!-- Glow -->
+                <div class="absolute -inset-6 bg-emerald-400/20 rounded-3xl blur-3xl -z-10"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+</body>
+</html>
